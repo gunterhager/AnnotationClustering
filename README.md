@@ -72,7 +72,7 @@ extension ViewController : MKMapViewDelegate {
 
 ## Documentation
 
-You can find the API documentation here: [Documentation](https://github.com/gunterhager/AnnotationClustering/docs/index.html)
+You can find the API documentation here: [Documentation](https://github.com/gunterhager/AnnotationClustering/blob/master/docs/index.html)
 
 ## Installation
 
@@ -92,7 +92,7 @@ Just drag and drop the `.swift` files in the `AnnotationClustering` folder into 
 
 ## License
 
-`AnnotationClustering` is available under the MIT license. See the [LICENSE](https://github.com/gunterhager/AnnotationClustering/blob/master/LICENSE.md) file for details.
+`AnnotationClustering` is available under the MIT license. See the [LICENSE](https://github.com/gunterhager/AnnotationClustering/blob/master/LICENSE) file for details.
 
 ## Contact
 
