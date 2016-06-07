@@ -1,0 +1,10 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "f6a4daf6875542f6e249b00fdf838b21"
+build_time: [518622597, 305033000]
+inputs:
+  "/Users/gupi/Documents/Development_Resources/AnnotationClustering/AnnotationClustering/Code/AnnotationClusterView.swift": [518621766, 0]
+  "/Users/gupi/Documents/Development_Resources/AnnotationClustering/AnnotationClustering/Code/QuadTree/BoundingBox.swift": [518606850, 0]
+  "/Users/gupi/Documents/Development_Resources/AnnotationClustering/AnnotationClustering/Code/QuadTree/QuadTreeNode.swift": [518613621, 0]
+  "/Users/gupi/Documents/Development_Resources/AnnotationClustering/AnnotationClustering/Code/AnnotationCluster.swift": [518621167, 0]
+  "/Users/gupi/Documents/Development_Resources/AnnotationClustering/AnnotationClustering/Code/QuadTree/QuadTree.swift": [518613721, 0]
+  "/Users/gupi/Documents/Development_Resources/AnnotationClustering/AnnotationClustering/Code/ClusterManager.swift": [518622262, 0]

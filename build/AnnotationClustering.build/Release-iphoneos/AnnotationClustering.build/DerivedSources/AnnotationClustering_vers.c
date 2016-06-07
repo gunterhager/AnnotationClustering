@@ -1,0 +1,1 @@
+ const unsigned char AnnotationClusteringVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:AnnotationClustering  PROJECT:AnnotationClustering-1" "\n"; const double AnnotationClusteringVersionNumber __attribute__ ((used)) = (double)1.;

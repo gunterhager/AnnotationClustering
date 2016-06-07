@@ -1,0 +1,48 @@
+//
+//  BoundingBox.swift
+//  AnnotationClustering
+//
+//  Created by Gunter Hager on 07.06.16.
+//  Copyright © 2016 Gunter Hager. All rights reserved.
+//
+
+import Foundation
+import MapKit
+
+struct BoundingBox {
+    private let rect: MKMapRect
+    
+    // MARK: - Initializers
+    
+    init(x: Double, y: Double, width: Double, height: Double) {
+        rect = MKMapRect(origin: MKMapPoint(x: x, y: y), size: MKMapSize(width: width, height: height))
+    }
+    
+    init(mapRect: MKMapRect) {
+        rect = mapRect
+    }
+
+    // MARK: - Convenience accessors
+    
+    var x: Double { return rect.origin.x }
+    var y: Double { return rect.origin.y }
+    var width: Double { return rect.size.width }
+    var height: Double { return rect.size.height }
+    
+    var mapRect: MKMapRect {
+        return rect
+    }
+
+    
+    // MARK: - Comparisons
+    
+    func contains(coordinate: CLLocationCoordinate2D) -> Bool {
+        return MKMapRectContainsPoint(rect, MKMapPointForCoordinate(coordinate))
+    }
+    
+    func intersects(other: BoundingBox) -> Bool {
+        return MKMapRectIntersectsRect(rect, other.rect)
+    }
+
+}
+

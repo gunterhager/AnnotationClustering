@@ -1,0 +1,10 @@
+framework module AnnotationClustering {
+  umbrella header "AnnotationClustering.h"
+
+  export *
+  module * { export * }
+}
+
+module AnnotationClustering.__Swift {
+    exclude header "AnnotationClustering-Swift.h"
+}

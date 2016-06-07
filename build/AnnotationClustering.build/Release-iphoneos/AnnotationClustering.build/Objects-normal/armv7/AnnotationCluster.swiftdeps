@@ -1,0 +1,121 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "AnnotationCluster"
+provides-nominal:
+- "C20AnnotationClustering17AnnotationCluster"
+provides-member:
+- ["C20AnnotationClustering17AnnotationCluster", ""]
+provides-dynamic-lookup:
+- "subtitle"
+- "title"
+- "coordinate"
+- "annotations"
+depends-top-level:
+- "MKAnnotation"
+- "CLLocationCoordinate2D"
+- "StringLiteralType"
+- "AnnotationCluster"
+- "String"
+- "NSObject"
+depends-member:
+- ["C20AnnotationClustering17AnnotationCluster", "CLLocationCoordinate2D"]
+- ["C20AnnotationClustering17AnnotationCluster", "MKAnnotation"]
+- ["C20AnnotationClustering17AnnotationCluster", "String"]
+- ["C20AnnotationClustering17AnnotationCluster", "annotations"]
+- ["C20AnnotationClustering17AnnotationCluster", "coordinate"]
+- ["C20AnnotationClustering17AnnotationCluster", "deinit"]
+- ["C20AnnotationClustering17AnnotationCluster", "init"]
+- ["C20AnnotationClustering17AnnotationCluster", "subtitle"]
+- ["C20AnnotationClustering17AnnotationCluster", "title"]
+- ["Ps9AnyObject", "CLLocationCoordinate2D"]
+- ["Ps9AnyObject", "annotations"]
+- ["Ps9AnyObject", "coordinate"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "subtitle"]
+- ["Ps9AnyObject", "title"]
+- ["Ps9AnyObject", ""]
+- ["VSC22CLLocationCoordinate2D", "init"]
+- ["Ps11CVarArgType", "CLLocationCoordinate2D"]
+- ["Ps11CVarArgType", "annotations"]
+- ["Ps11CVarArgType", "coordinate"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "subtitle"]
+- ["Ps11CVarArgType", "title"]
+- ["Ps11CVarArgType", ""]
+- ["Ps28CustomDebugStringConvertible", "CLLocationCoordinate2D"]
+- ["Ps28CustomDebugStringConvertible", "annotations"]
+- ["Ps28CustomDebugStringConvertible", "coordinate"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "subtitle"]
+- ["Ps28CustomDebugStringConvertible", "title"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- ["Ps23CustomStringConvertible", "CLLocationCoordinate2D"]
+- ["Ps23CustomStringConvertible", "annotations"]
+- ["Ps23CustomStringConvertible", "coordinate"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "subtitle"]
+- ["Ps23CustomStringConvertible", "title"]
+- ["Ps23CustomStringConvertible", ""]
+- ["Ps9Equatable", "CLLocationCoordinate2D"]
+- ["Ps9Equatable", "annotations"]
+- ["Ps9Equatable", "coordinate"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "subtitle"]
+- ["Ps9Equatable", "title"]
+- ["Ps9Equatable", ""]
+- ["Ps8Hashable", "CLLocationCoordinate2D"]
+- ["Ps8Hashable", "annotations"]
+- ["Ps8Hashable", "coordinate"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "subtitle"]
+- ["Ps8Hashable", "title"]
+- ["Ps8Hashable", ""]
+- ["PSo12MKAnnotation", "CLLocationCoordinate2D"]
+- ["PSo12MKAnnotation", "coordinate"]
+- ["PSo12MKAnnotation", "subtitle"]
+- ["PSo12MKAnnotation", "title"]
+- ["PSo12MKAnnotation", ""]
+- ["CSo8NSObject", "CLLocationCoordinate2D"]
+- ["CSo8NSObject", "MKAnnotation"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "annotations"]
+- ["CSo8NSObject", "coordinate"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "subtitle"]
+- ["CSo8NSObject", "title"]
+- ["CSo8NSObject", ""]
+- ["PSo16NSObjectProtocol", "CLLocationCoordinate2D"]
+- ["PSo16NSObjectProtocol", "annotations"]
+- ["PSo16NSObjectProtocol", "coordinate"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "subtitle"]
+- ["PSo16NSObjectProtocol", "title"]
+- ["PSo16NSObjectProtocol", ""]
+- ["Sq", "deinit"]
+depends-nominal:
+- "C20AnnotationClustering17AnnotationCluster"
+- "Ps9AnyObject"
+- "VSC22CLLocationCoordinate2D"
+- "Ps11CVarArgType"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps8Hashable"
+- "PSo12MKAnnotation"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "Sq"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
+- "/Users/gupi/Documents/Development_Resources/AnnotationClustering/AnnotationClustering/AnnotationClustering.h"
+- "/Users/gupi/Documents/Development_Resources/AnnotationClustering/build/AnnotationClustering.build/Release-iphoneos/AnnotationClustering.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreLocation.swiftmodule"
+interface-hash: "d726ba9d2c112a0709b2ecd682564b70"

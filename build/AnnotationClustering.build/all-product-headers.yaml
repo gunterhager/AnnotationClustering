@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/gupi/Documents/Development_Resources/AnnotationClustering/build/Release-iphoneos/AnnotationClustering.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "AnnotationClustering-Swift.h",
+          'external-contents': "/Users/gupi/Documents/Development_Resources/AnnotationClustering/build/Release-iphoneos/AnnotationClustering.framework/Headers/AnnotationClustering-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "AnnotationClustering.h",
+          'external-contents': "/Users/gupi/Documents/Development_Resources/AnnotationClustering/AnnotationClustering/AnnotationClustering.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/gupi/Documents/Development_Resources/AnnotationClustering/build/Release-iphoneos/AnnotationClustering.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/gupi/Documents/Development_Resources/AnnotationClustering/build/AnnotationClustering.build/Release-iphoneos/AnnotationClustering.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

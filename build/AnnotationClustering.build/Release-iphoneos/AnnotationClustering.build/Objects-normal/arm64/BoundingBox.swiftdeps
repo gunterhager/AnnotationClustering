@@ -1,0 +1,67 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "BoundingBox"
+provides-nominal:
+- "V20AnnotationClustering11BoundingBox"
+provides-member:
+- ["V20AnnotationClustering11BoundingBox", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "MKMapSize"
+- !private "MKMapRectContainsPoint"
+- !private "MKMapPointForCoordinate"
+- "Bool"
+- !private "MKMapPoint"
+- "BoundingBox"
+- "CLLocationCoordinate2D"
+- "Double"
+- !private "MKMapRectIntersectsRect"
+- "MKMapRect"
+depends-member:
+- ["V20AnnotationClustering11BoundingBox", "Bool"]
+- ["V20AnnotationClustering11BoundingBox", "BoundingBox"]
+- ["V20AnnotationClustering11BoundingBox", "CLLocationCoordinate2D"]
+- ["V20AnnotationClustering11BoundingBox", "Double"]
+- !private ["V20AnnotationClustering11BoundingBox", "MKMapPoint"]
+- !private ["V20AnnotationClustering11BoundingBox", "MKMapPointForCoordinate"]
+- ["V20AnnotationClustering11BoundingBox", "MKMapRect"]
+- !private ["V20AnnotationClustering11BoundingBox", "MKMapRectContainsPoint"]
+- !private ["V20AnnotationClustering11BoundingBox", "MKMapRectIntersectsRect"]
+- !private ["V20AnnotationClustering11BoundingBox", "MKMapSize"]
+- ["V20AnnotationClustering11BoundingBox", "contains"]
+- ["V20AnnotationClustering11BoundingBox", "height"]
+- ["V20AnnotationClustering11BoundingBox", "init"]
+- ["V20AnnotationClustering11BoundingBox", "intersects"]
+- ["V20AnnotationClustering11BoundingBox", "mapRect"]
+- !private ["V20AnnotationClustering11BoundingBox", "rect"]
+- ["V20AnnotationClustering11BoundingBox", "width"]
+- ["V20AnnotationClustering11BoundingBox", "x"]
+- ["V20AnnotationClustering11BoundingBox", "y"]
+- !private ["VSC10MKMapPoint", "init"]
+- !private ["VSC10MKMapPoint", "x"]
+- !private ["VSC10MKMapPoint", "y"]
+- !private ["VSC9MKMapRect", "init"]
+- !private ["VSC9MKMapRect", "origin"]
+- !private ["VSC9MKMapRect", "size"]
+- !private ["VSC9MKMapSize", "height"]
+- !private ["VSC9MKMapSize", "init"]
+- !private ["VSC9MKMapSize", "width"]
+depends-nominal:
+- "V20AnnotationClustering11BoundingBox"
+- !private "VSC10MKMapPoint"
+- !private "VSC9MKMapRect"
+- !private "VSC9MKMapSize"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Users/gupi/Documents/Development_Resources/AnnotationClustering/AnnotationClustering/AnnotationClustering.h"
+- "/Users/gupi/Documents/Development_Resources/AnnotationClustering/build/AnnotationClustering.build/Release-iphoneos/AnnotationClustering.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreLocation.swiftmodule"
+interface-hash: "684d39edc531c1206a774011b58f7e29"
