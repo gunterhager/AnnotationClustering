@@ -138,7 +138,13 @@ public class AnnotationClusterView : MKAnnotationView {
  *  Provides options for the annotation cluster view.
  */
 public struct AnnotationClusterViewOptions {
-    let smallClusterImage : String
-    let mediumClusterImage : String
-    let largeClusterImage : String
+    let smallClusterImage: String
+    let mediumClusterImage: String
+    let largeClusterImage: String
+    
+    public init(smallClusterImage: String, mediumClusterImage: String, largeClusterImage: String) {
+        self.smallClusterImage = smallClusterImage
+        self.mediumClusterImage = mediumClusterImage
+        self.largeClusterImage = largeClusterImage
+    }
 }
