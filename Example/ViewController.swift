@@ -47,10 +47,9 @@ class ViewController: UIViewController {
     
     func randomLocationsWithCount(count: Int) -> [MKAnnotation] {
         var array = [MKAnnotation]()
-        for _ in 0...count {
+        (0 ..< count).forEach { _ in
             let a = Annotation()
-//            a.coordinate = CLLocationCoordinate2D(latitude: drand48() * 40 - 20, longitude: drand48() * 80 - 40 )
-            a.coordinate = CLLocationCoordinate2D(latitude: 15.415599822998047, longitude: 101.57099914550781)
+            a.coordinate = CLLocationCoordinate2D(latitude: drand48() * 40 - 20, longitude: drand48() * 80 - 40 )
             array.append(a)
         }
         return array
