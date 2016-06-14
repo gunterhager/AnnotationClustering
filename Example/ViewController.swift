@@ -49,7 +49,8 @@ class ViewController: UIViewController {
         var array = [MKAnnotation]()
         for _ in 0...count {
             let a = Annotation()
-            a.coordinate = CLLocationCoordinate2D(latitude: drand48() * 40 - 20, longitude: drand48() * 80 - 40 )
+//            a.coordinate = CLLocationCoordinate2D(latitude: drand48() * 40 - 20, longitude: drand48() * 80 - 40 )
+            a.coordinate = CLLocationCoordinate2D(latitude: 15.415599822998047, longitude: 101.57099914550781)
             array.append(a)
         }
         return array
@@ -85,26 +86,26 @@ extension ViewController : MKMapViewDelegate {
         
     }
     
+    // Note: The example app doesn't support showing the user location. The handling of the user location pin is given as an example here in case your app wants to use it.
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
         var reuseId = ""
         
-        if annotation.isKindOfClass(AnnotationCluster) {
+        switch annotation {
+        case is MKUserLocation:
+            return nil // show Apple's default user location pin
+            
+        case let cluster as AnnotationCluster:
             reuseId = "Cluster"
             if let clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? AnnotationClusterView {
-                if let annotation = annotation as? AnnotationCluster {
-                    clusterView.reuseWithAnnotation(annotation)
-                }
+                clusterView.reuseWithAnnotation(cluster)
                 return clusterView
             }
             else {
-                let annotation = annotation as? AnnotationCluster
-                let clusterView = AnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId, options: nil)
-                return clusterView
+                return AnnotationClusterView(annotation: cluster, reuseIdentifier: reuseId, options: nil)
             }
-            
-        }
-        else {
+
+        default:
             reuseId = "Pin"
             if let pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView {
                 pinView.annotation = annotation

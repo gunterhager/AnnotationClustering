@@ -9,6 +9,8 @@
 import Foundation
 import MapKit
 
+let smallDimension = Double(10.0)
+
 struct BoundingBox {
     private let rect: MKMapRect
     
@@ -31,6 +33,11 @@ struct BoundingBox {
     
     var mapRect: MKMapRect {
         return rect
+    }
+    
+    var isSmall: Bool {
+        let minDimension = min(width, height)
+        return minDimension < smallDimension
     }
 
     

@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AnnotationClusteringTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Example.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>BC1437401D06C168006891D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BC37654F1D100B1E00BA8E58</key>
 		<dict>
 			<key>primary</key>
 			<true/>

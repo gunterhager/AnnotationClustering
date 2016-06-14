@@ -44,9 +44,11 @@ class QuadTreeNode {
     }
     
     func addAnnotation(annotation: MKAnnotation) -> Bool {
-        guard boundingBox.contains(annotation.coordinate) else { return false }
+        guard boundingBox.contains(annotation.coordinate) else {
+            return false
+        }
         
-        if annotations.count < nodeCapacity {
+        if (annotations.count < nodeCapacity) || boundingBox.isSmall {
             annotations.append(annotation)
             return true
         }

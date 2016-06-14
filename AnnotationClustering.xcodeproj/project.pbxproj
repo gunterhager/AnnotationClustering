@@ -22,6 +22,9 @@
 		BC1437671D06DBB8006891D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1437661D06DBB8006891D8 /* Assets.xcassets */; };
 		BC1437681D06EC65006891D8 /* AnnotationClustering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1437321D06C14B006891D8 /* AnnotationClustering.framework */; };
 		BC1437691D06EC65006891D8 /* AnnotationClustering.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC1437321D06C14B006891D8 /* AnnotationClustering.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BC3765551D100B1E00BA8E58 /* AnnotationClustering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1437321D06C14B006891D8 /* AnnotationClustering.framework */; };
+		BC37655C1D100B4B00BA8E58 /* QuadTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC37655B1D100B4B00BA8E58 /* QuadTreeTests.swift */; };
+		BC37655E1D100C7D00BA8E58 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC37655D1D100C7D00BA8E58 /* Annotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = BC1437311D06C14B006891D8;
 			remoteInfo = AnnotationClustering;
+		};
+		BC3765561D100B1E00BA8E58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC1437291D06C14B006891D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC1437311D06C14B006891D8;
+			remoteInfo = AnnotationClustering;
+		};
+		BC3B0D811D100E7500E35637 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC1437291D06C14B006891D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC1437401D06C168006891D8;
+			remoteInfo = Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -67,6 +84,10 @@
 		BC14375E1D06DA19006891D8 /* ClusterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClusterManager.swift; sourceTree = "<group>"; };
 		BC1437601D06DA46006891D8 /* AnnotationClusterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationClusterView.swift; sourceTree = "<group>"; };
 		BC1437661D06DBB8006891D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC3765501D100B1E00BA8E58 /* AnnotationClusteringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnnotationClusteringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC3765541D100B1E00BA8E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC37655B1D100B4B00BA8E58 /* QuadTreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadTreeTests.swift; sourceTree = "<group>"; };
+		BC37655D1D100C7D00BA8E58 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +106,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC37654D1D100B1E00BA8E58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC3765551D100B1E00BA8E58 /* AnnotationClustering.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,6 +123,7 @@
 				BC1437531D06C1F5006891D8 /* README.md */,
 				BC1437341D06C14B006891D8 /* AnnotationClustering */,
 				BC1437421D06C168006891D8 /* Example */,
+				BC3765511D100B1E00BA8E58 /* AnnotationClusteringTests */,
 				BC1437331D06C14B006891D8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +133,7 @@
 			children = (
 				BC1437321D06C14B006891D8 /* AnnotationClustering.framework */,
 				BC1437411D06C168006891D8 /* Example.app */,
+				BC3765501D100B1E00BA8E58 /* AnnotationClusteringTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +191,16 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		BC3765511D100B1E00BA8E58 /* AnnotationClusteringTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC37655D1D100C7D00BA8E58 /* Annotation.swift */,
+				BC37655B1D100B4B00BA8E58 /* QuadTreeTests.swift */,
+				BC3765541D100B1E00BA8E58 /* Info.plist */,
+			);
+			path = AnnotationClusteringTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -211,6 +252,25 @@
 			productReference = BC1437411D06C168006891D8 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BC37654F1D100B1E00BA8E58 /* AnnotationClusteringTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC37655A1D100B1E00BA8E58 /* Build configuration list for PBXNativeTarget "AnnotationClusteringTests" */;
+			buildPhases = (
+				BC37654C1D100B1E00BA8E58 /* Sources */,
+				BC37654D1D100B1E00BA8E58 /* Frameworks */,
+				BC37654E1D100B1E00BA8E58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC3765571D100B1E00BA8E58 /* PBXTargetDependency */,
+				BC3B0D821D100E7500E35637 /* PBXTargetDependency */,
+			);
+			name = AnnotationClusteringTests;
+			productName = AnnotationClusteringTests;
+			productReference = BC3765501D100B1E00BA8E58 /* AnnotationClusteringTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -225,6 +285,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					BC1437401D06C168006891D8 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					BC37654F1D100B1E00BA8E58 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -244,6 +307,7 @@
 			targets = (
 				BC1437311D06C14B006891D8 /* AnnotationClustering */,
 				BC1437401D06C168006891D8 /* Example */,
+				BC37654F1D100B1E00BA8E58 /* AnnotationClusteringTests */,
 			);
 		};
 /* End PBXProject section */
@@ -264,6 +328,13 @@
 				BC14374E1D06C168006891D8 /* LaunchScreen.storyboard in Resources */,
 				BC14374B1D06C168006891D8 /* Assets.xcassets in Resources */,
 				BC1437491D06C168006891D8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC37654E1D100B1E00BA8E58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +363,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC37654C1D100B1E00BA8E58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC37655C1D100B4B00BA8E58 /* QuadTreeTests.swift in Sources */,
+				BC37655E1D100C7D00BA8E58 /* Annotation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -299,6 +379,16 @@
 			isa = PBXTargetDependency;
 			target = BC1437311D06C14B006891D8 /* AnnotationClustering */;
 			targetProxy = BC14376A1D06EC65006891D8 /* PBXContainerItemProxy */;
+		};
+		BC3765571D100B1E00BA8E58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC1437311D06C14B006891D8 /* AnnotationClustering */;
+			targetProxy = BC3765561D100B1E00BA8E58 /* PBXContainerItemProxy */;
+		};
+		BC3B0D821D100E7500E35637 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC1437401D06C168006891D8 /* Example */;
+			targetProxy = BC3B0D811D100E7500E35637 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -474,6 +564,28 @@
 			};
 			name = Release;
 		};
+		BC3765581D100B1E00BA8E58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AnnotationClusteringTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.allaboutapps.AnnotationClusteringTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BC3765591D100B1E00BA8E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AnnotationClusteringTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = at.allaboutapps.AnnotationClusteringTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -500,6 +612,15 @@
 			buildConfigurations = (
 				BC1437511D06C168006891D8 /* Debug */,
 				BC1437521D06C168006891D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC37655A1D100B1E00BA8E58 /* Build configuration list for PBXNativeTarget "AnnotationClusteringTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC3765581D100B1E00BA8E58 /* Debug */,
+				BC3765591D100B1E00BA8E58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
