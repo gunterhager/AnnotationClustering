@@ -39,6 +39,8 @@ public class AnnotationClusterView : MKAnnotationView {
     public init(annotation: AnnotationCluster?, reuseIdentifier: String?, options: AnnotationClusterViewOptions?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
+        self.options = options
+
         guard let cluster = annotation else { return }
         updateViewFromCount(cluster.annotations.count)
         

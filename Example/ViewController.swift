@@ -101,8 +101,10 @@ extension ViewController : MKMapViewDelegate {
                 return clusterView
             }
             else {
-                return AnnotationClusterView(annotation: cluster, reuseIdentifier: reuseId, options: nil)
+                let options = AnnotationClusterViewOptions(smallClusterImage: "cluster_2_30", mediumClusterImage: "cluster_2_40", largeClusterImage: "cluster_2_50")
+                return AnnotationClusterView(annotation: cluster, reuseIdentifier: reuseId, options: options)
             }
+            
 
         default:
             reuseId = "Pin"
