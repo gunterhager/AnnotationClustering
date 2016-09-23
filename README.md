@@ -10,7 +10,7 @@ Based on https://github.com/ribl/FBAnnotationClusteringSwift.
 
 ## Requirements
 
-iOS 9.3+, Swift 2.3
+iOS 8.0+, Swift 2.3
 
 ## Usage
 
