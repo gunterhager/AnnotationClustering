@@ -8,6 +8,10 @@ Framework that clusters annotations on `MKMapView`.
 
 Based on https://github.com/ribl/FBAnnotationClusteringSwift.
 
+## Requirements
+
+iOS 9.3+, Swift 2.3
+
 ## Usage
 
 An example app is included to demonstrate the usage of `AnnotationClustering`.
