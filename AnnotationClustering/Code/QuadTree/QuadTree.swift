@@ -21,15 +21,16 @@ class QuadTree {
         return rootNode.allAnnotations
     }
     
-    func addAnnotation(annotation: MKAnnotation) -> Bool {
+    @discardableResult
+    func addAnnotation(_ annotation: MKAnnotation) -> Bool {
         return rootNode.addAnnotation(annotation)
     }
     
-    func forEachAnnotation(block: (MKAnnotation) -> Void) {
+    func forEachAnnotation(_ block: (MKAnnotation) -> Void) {
         forEachAnnotationInBox(BoundingBox(mapRect: MKMapRectWorld), block: block)
     }
     
-    func forEachAnnotationInBox(box: BoundingBox, block: (MKAnnotation) -> Void) {
+    func forEachAnnotationInBox(_ box: BoundingBox, block: (MKAnnotation) -> Void) {
         rootNode.forEachAnnotationInBox(box, block: block)
     }
 

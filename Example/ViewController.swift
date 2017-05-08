@@ -45,7 +45,7 @@ class ViewController: UIViewController {
 
     // MARK: - Utility
     
-    func randomLocationsWithCount(count: Int) -> [MKAnnotation] {
+    func randomLocationsWithCount(_ count: Int) -> [MKAnnotation] {
         var array = [MKAnnotation]()
         (0 ..< count).forEach { _ in
             let a = Annotation()
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
 
 extension ViewController : ClusterManagerDelegate {
     
-    func cellSizeFactorForManager(manager: ClusterManager) -> CGFloat {
+    func cellSizeFactorForManager(_ manager: ClusterManager) -> CGFloat {
         return 1.0
     }
     
@@ -68,9 +68,9 @@ extension ViewController : ClusterManagerDelegate {
 
 extension ViewController : MKMapViewDelegate {
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool){
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool){
         
-        NSOperationQueue().addOperationWithBlock { [unowned self] in
+        OperationQueue().addOperation { [unowned self] in
             
             let mapBoundsWidth = Double(mapView.bounds.size.width)
             let mapRectWidth:Double = mapView.visibleMapRect.size.width
@@ -86,7 +86,7 @@ extension ViewController : MKMapViewDelegate {
     }
     
     // Note: The example app doesn't support showing the user location. The handling of the user location pin is given as an example here in case your app wants to use it.
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         var reuseId = ""
         
@@ -96,7 +96,7 @@ extension ViewController : MKMapViewDelegate {
             
         case let cluster as AnnotationCluster:
             reuseId = "Cluster"
-            if let clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? AnnotationClusterView {
+            if let clusterView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? AnnotationClusterView {
                 clusterView.reuseWithAnnotation(cluster)
                 return clusterView
             }
@@ -108,7 +108,7 @@ extension ViewController : MKMapViewDelegate {
 
         default:
             reuseId = "Pin"
-            if let pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView {
+            if let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView {
                 pinView.annotation = annotation
                 return pinView
             }

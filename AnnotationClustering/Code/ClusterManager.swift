@@ -21,32 +21,32 @@ public protocol ClusterManagerDelegate {
      
      - returns: A cell size factor fo rthe manager to use.
      */
-    func cellSizeFactorForManager(manager: ClusterManager) -> CGFloat
+    func cellSizeFactorForManager(_ manager: ClusterManager) -> CGFloat
     
 }
 
 /// Class that manages the clustering of the annotations.
-public class ClusterManager {
+open class ClusterManager {
     
-    public var delegate: ClusterManagerDelegate?
-    public var maxZoomLevel = 19
+    open var delegate: ClusterManagerDelegate?
+    open var maxZoomLevel = 19
     
-    private var tree = QuadTree()    
-    private var lock = NSRecursiveLock()
+    fileprivate var tree = QuadTree()    
+    fileprivate var lock = NSRecursiveLock()
     
     
     public init(annotations: [MKAnnotation] = []){
         addAnnotations(annotations)
     }
     
-    public func setAnnotations(annotations:[MKAnnotation]) {
+    open func setAnnotations(_ annotations:[MKAnnotation]) {
         lock.lock()
         tree = QuadTree()
         addAnnotations(annotations)
         lock.unlock()
     }
     
-    public func addAnnotations(annotations:[MKAnnotation]) {
+    open func addAnnotations(_ annotations:[MKAnnotation]) {
         lock.lock()
         for annotation in annotations {
             tree.addAnnotation(annotation)
@@ -54,7 +54,7 @@ public class ClusterManager {
         lock.unlock()
     }
     
-    public func clusteredAnnotationsWithinMapRect(rect:MKMapRect, withZoomScale zoomScale:Double) -> [MKAnnotation] {
+    open func clusteredAnnotationsWithinMapRect(_ rect:MKMapRect, withZoomScale zoomScale:Double) -> [MKAnnotation] {
         guard !zoomScale.isInfinite else { return [] }
         
         let zoomLevel   = ClusterManager.zoomScaleToZoomLevel(MKZoomScale(zoomScale))
@@ -115,26 +115,26 @@ public class ClusterManager {
         return clusteredAnnotations
     }
     
-    public var allAnnotations: [MKAnnotation] {
+    open var allAnnotations: [MKAnnotation] {
         lock.lock()
         let annotations = tree.allAnnotations
         lock.unlock()
         return annotations
     }
     
-    public func displayAnnotations(annotations: [MKAnnotation], mapView:MKMapView){
+    open func displayAnnotations(_ annotations: [MKAnnotation], mapView:MKMapView){
         
-        dispatch_async(dispatch_get_main_queue())  {
+        DispatchQueue.main.async  {
             
             let before = NSMutableSet(array: mapView.annotations)
-            before.removeObject(mapView.userLocation)
+            before.remove(mapView.userLocation)
             let after = NSSet(array: annotations)
             let toKeep = NSMutableSet(set: before)
-            toKeep.intersectSet(after as Set<NSObject>)
+            toKeep.intersect(after as Set<NSObject>)
             let toAdd = NSMutableSet(set: after)
-            toAdd.minusSet(toKeep as Set<NSObject>)
+            toAdd.minus(toKeep as Set<NSObject>)
             let toRemove = NSMutableSet(set: before)
-            toRemove.minusSet(after as Set<NSObject>)
+            toRemove.minus(after as Set<NSObject>)
             
             if let toAddAnnotations = toAdd.allObjects as? [MKAnnotation]{
                 mapView.addAnnotations(toAddAnnotations)
@@ -147,17 +147,17 @@ public class ClusterManager {
         
     }
     
-    public class func zoomScaleToZoomLevel(scale: MKZoomScale) -> Int {
+    open class func zoomScaleToZoomLevel(_ scale: MKZoomScale) -> Int {
         let totalTilesAtMaxZoom = MKMapSizeWorld.width / 256.0
         let zoomLevelAtMaxZoom = Int(log2(totalTilesAtMaxZoom))
         let floorLog2ScaleFloat = floor(log2f(Float(scale))) + 0.5
-        guard !floorLog2ScaleFloat.isInfinite else { return floorLog2ScaleFloat.isSignMinus ? 0 : 19 }
+        guard !floorLog2ScaleFloat.isInfinite else { return (floorLog2ScaleFloat.sign == .minus) ? 0 : 19 }
         let sum = zoomLevelAtMaxZoom + Int(floorLog2ScaleFloat)
         let zoomLevel = max(0, sum)
         return zoomLevel;
     }
     
-    public class func cellSizeForZoomLevel(zoomLevel: Int) -> CGFloat {
+    open class func cellSizeForZoomLevel(_ zoomLevel: Int) -> CGFloat {
         
         switch (zoomLevel) {
         case 13:
@@ -181,7 +181,7 @@ public class ClusterManager {
         }
     }
     
-    public class func cellSizeForZoomScale(zoomScale: MKZoomScale) -> CGFloat {
+    open class func cellSizeForZoomScale(_ zoomScale: MKZoomScale) -> CGFloat {
         
         let zoomLevel = ClusterManager.zoomScaleToZoomLevel(zoomScale)
         return ClusterManager.cellSizeForZoomLevel(zoomLevel)

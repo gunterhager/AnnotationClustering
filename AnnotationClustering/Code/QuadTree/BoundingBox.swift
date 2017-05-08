@@ -12,7 +12,7 @@ import MapKit
 let smallDimension = Double(10.0)
 
 struct BoundingBox {
-    private let rect: MKMapRect
+    fileprivate let rect: MKMapRect
     
     // MARK: - Initializers
     
@@ -43,11 +43,11 @@ struct BoundingBox {
     
     // MARK: - Comparisons
     
-    func contains(coordinate: CLLocationCoordinate2D) -> Bool {
+    func contains(_ coordinate: CLLocationCoordinate2D) -> Bool {
         return MKMapRectContainsPoint(rect, MKMapPointForCoordinate(coordinate))
     }
     
-    func intersects(other: BoundingBox) -> Bool {
+    func intersects(_ other: BoundingBox) -> Bool {
         return MKMapRectIntersectsRect(rect, other.rect)
     }
 

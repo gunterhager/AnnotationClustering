@@ -1,7 +1,7 @@
 # AnnotationClustering
 
-<img src="https://img.shields.io/badge/Platform-iOS%208%2B-blue.svg" alt="Platform iOS8+">
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Language-Swift%202-orange.svg" alt="Language: Swift 2" /></a>
+<img src="https://img.shields.io/badge/Platform-iOS%208-blue.svg" alt="Platform iOS8+">
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Language-Swift%203-orange.svg" alt="Language: Swift 2" /></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg" alt="Carthage compatible" /></a>
 
 Framework that clusters annotations on `MKMapView`.
@@ -10,7 +10,7 @@ Based on https://github.com/ribl/FBAnnotationClusteringSwift.
 
 ## Requirements
 
-iOS 8.0+, Swift 2.3
+iOS 8.0+, Swift 3
 
 ## Usage
 
@@ -36,32 +36,47 @@ Return cluster or pin in the delegate of the map view.
 ```swift
 extension ViewController : MKMapViewDelegate {
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool){
-        NSOperationQueue().addOperationWithBlock { [unowned self] in
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool){
+        
+        OperationQueue().addOperation { [unowned self] in
+            
             let mapBoundsWidth = Double(mapView.bounds.size.width)
             let mapRectWidth:Double = mapView.visibleMapRect.size.width
+            
             let scale:Double = mapBoundsWidth / mapRectWidth
+            
             let annotationArray = self.clusterManager.clusteredAnnotationsWithinMapRect(self.mapView.visibleMapRect, withZoomScale:scale)
+            
             self.clusterManager.displayAnnotations(annotationArray, mapView: mapView)
+            
         }
+        
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    // Note: The example app doesn't support showing the user location. The handling of the user location pin is given as an example here in case your app wants to use it.
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
         var reuseId = ""
-        if annotation.isKindOfClass(AnnotationCluster) {
+        
+        switch annotation {
+        case is MKUserLocation:
+            return nil // show Apple's default user location pin
+            
+        case let cluster as AnnotationCluster:
             reuseId = "Cluster"
-            if let clusterView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? AnnotationClusterView {
-                clusterView.reuseWithAnnotation(annotation)
+            if let clusterView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? AnnotationClusterView {
+                clusterView.reuseWithAnnotation(cluster)
                 return clusterView
             }
             else {
-                let clusterView = AnnotationClusterView(annotation: annotation, reuseIdentifier: reuseId, options: nil)
-                return clusterView
+                let options = AnnotationClusterViewOptions(smallClusterImage: "cluster_2_30", mediumClusterImage: "cluster_2_40", largeClusterImage: "cluster_2_50")
+                return AnnotationClusterView(annotation: cluster, reuseIdentifier: reuseId, options: options)
             }
-        }
-        else {
+            
+
+        default:
             reuseId = "Pin"
-            if let pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView {
+            if let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView {
                 pinView.annotation = annotation
                 return pinView
             }
@@ -70,7 +85,9 @@ extension ViewController : MKMapViewDelegate {
                 return pinView
             }
         }
+        
     }
+    
 }
 ```
 

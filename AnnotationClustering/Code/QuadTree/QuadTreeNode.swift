@@ -43,7 +43,7 @@ class QuadTreeNode {
         return result
     }
     
-    func addAnnotation(annotation: MKAnnotation) -> Bool {
+    func addAnnotation(_ annotation: MKAnnotation) -> Bool {
         guard boundingBox.contains(annotation.coordinate) else {
             return false
         }
@@ -55,23 +55,23 @@ class QuadTreeNode {
         
         subdivide()
         
-        if let node = northEast where node.addAnnotation(annotation) == true {
+        if let node = northEast, node.addAnnotation(annotation) == true {
             return true
         }
-        if let node = northWest where node.addAnnotation(annotation) == true {
+        if let node = northWest, node.addAnnotation(annotation) == true {
             return true
         }
-        if let node = southEast where node.addAnnotation(annotation) == true {
+        if let node = southEast, node.addAnnotation(annotation) == true {
             return true
         }
-        if let node = southWest where node.addAnnotation(annotation) == true {
+        if let node = southWest, node.addAnnotation(annotation) == true {
             return true
         }
         
         return false
     }
     
-    func forEachAnnotationInBox(box: BoundingBox, block: (MKAnnotation) -> Void) {
+    func forEachAnnotationInBox(_ box: BoundingBox, block: (MKAnnotation) -> Void) {
         guard boundingBox.intersects(box) else { return }
         
         for annotation in annotations {
@@ -101,11 +101,11 @@ class QuadTreeNode {
     
     // MARK: - Private
     
-    private func isLeaf() -> Bool {
+    fileprivate func isLeaf() -> Bool {
         return (northEast == nil) ? true : false
     }
     
-    private func subdivide() {
+    fileprivate func subdivide() {
         
         guard isLeaf() == true else { return }
         

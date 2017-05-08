@@ -10,22 +10,22 @@ import UIKit
 import MapKit
 
 /// Annotation view that represents a cluster. If you reuse an instance of this view, be sure to call `reuseWithAnnotation()`.
-public class AnnotationClusterView : MKAnnotationView {
+open class AnnotationClusterView : MKAnnotationView {
     
     /// Count of the annotations this cluster view represents.
-    public var count = 0 {
+    open var count = 0 {
         didSet {
             setNeedsLayout()
         }
     }
     
-    private var fontSize: CGFloat = 12
+    fileprivate var fontSize: CGFloat = 12
     
-    private var imageName = "cluster_30"
-    private var loadExternalImage = false
+    fileprivate var imageName = "cluster_30"
+    fileprivate var loadExternalImage = false
     
-    private var countLabel: UILabel = UILabel()
-    private var options: AnnotationClusterViewOptions?
+    fileprivate var countLabel: UILabel = UILabel()
+    fileprivate var options: AnnotationClusterViewOptions?
     
     /**
      Creates a new cluster annotation view.
@@ -44,19 +44,19 @@ public class AnnotationClusterView : MKAnnotationView {
         guard let cluster = annotation else { return }
         updateViewFromCount(cluster.annotations.count)
         
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         
         // Setup label
         self.countLabel.frame = bounds
-        self.countLabel.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        self.countLabel.textAlignment = .Center
-        self.countLabel.backgroundColor = UIColor.clearColor()
-        self.countLabel.textColor = UIColor.whiteColor()
+        self.countLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.countLabel.textAlignment = .center
+        self.countLabel.backgroundColor = UIColor.clear
+        self.countLabel.textColor = UIColor.white
         self.countLabel.adjustsFontSizeToFitWidth = true
         self.countLabel.minimumScaleFactor = 0.8
         self.countLabel.numberOfLines = 1
-        self.countLabel.font = UIFont.boldSystemFontOfSize(fontSize)
-        self.countLabel.baselineAdjustment = .AlignCenters
+        self.countLabel.font = UIFont.boldSystemFont(ofSize: fontSize)
+        self.countLabel.baselineAdjustment = .alignCenters
         addSubview(self.countLabel)
         
         setNeedsLayout()
@@ -68,16 +68,16 @@ public class AnnotationClusterView : MKAnnotationView {
         super.init(coder: aDecoder)
     }
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         
         // Images are faster than using drawRect:
         
-        let bundle: NSBundle? = loadExternalImage ? nil : NSBundle(forClass: AnnotationClusterView.self)
-        let imageAsset = UIImage(named: imageName, inBundle: bundle, compatibleWithTraitCollection: nil)
+        let bundle: Bundle? = loadExternalImage ? nil : Bundle(for: AnnotationClusterView.self)
+        let imageAsset = UIImage(named: imageName, in: bundle, compatibleWith: nil)
         
         countLabel.frame = self.bounds
         image = imageAsset
-        centerOffset = CGPointZero
+        centerOffset = CGPoint.zero
 
         guard let cluster = annotation as? AnnotationCluster else { return }
         updateViewFromCount(cluster.annotations.count)
@@ -88,13 +88,13 @@ public class AnnotationClusterView : MKAnnotationView {
      
      - parameter annotation: Annotation that represents a cluster.
      */
-    public func reuseWithAnnotation(annotation: AnnotationCluster) {
+    open func reuseWithAnnotation(_ annotation: AnnotationCluster) {
         self.annotation = annotation
         self.count = annotation.annotations.count
         
     }
     
-    private func updateViewFromCount(count: Int) {
+    fileprivate func updateViewFromCount(_ count: Int) {
         countLabel.text = "\(count)"
 
         switch count {
