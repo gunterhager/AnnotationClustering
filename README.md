@@ -4,9 +4,12 @@
 <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Language-Swift%203-orange.svg" alt="Language: Swift 2" /></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg" alt="Carthage compatible" /></a>
 
+
 Framework that clusters annotations on `MKMapView`.
 
 Based on https://github.com/ribl/FBAnnotationClusteringSwift.
+
+**NOTE: This project is deprecated since Apple has added native clustering support with iOS 11!**
 
 ## Requirements
 
